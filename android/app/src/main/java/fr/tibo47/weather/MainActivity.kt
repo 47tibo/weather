@@ -1,4 +1,4 @@
-package com.weather
+package fr.tibo47.weather
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate

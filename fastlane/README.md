@@ -26,13 +26,13 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 ## Android
 
-### android beta
+### android release
 
 ```sh
-[bundle exec] fastlane android beta
+[bundle exec] fastlane android release
 ```
 
-release android beta
+release android production
 
 ----
 

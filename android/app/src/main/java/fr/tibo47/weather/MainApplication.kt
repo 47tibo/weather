@@ -1,4 +1,4 @@
-package com.weather
+package fr.tibo47.weather
 
 import android.app.Application
 import com.facebook.react.PackageList

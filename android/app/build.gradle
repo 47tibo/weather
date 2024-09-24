@@ -77,12 +77,12 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.weather"
+    namespace "fr.tibo47.weather"
     defaultConfig {
-        applicationId "com.weather"
+        applicationId "fr.tibo47.weather"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 2
+        versionCode 5
         versionName "1.0"
     }
     signingConfigs {
@@ -93,12 +93,10 @@ android {
             keyPassword 'android'
         }
         release {
-            if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE')) {
-                storeFile file(MYAPP_UPLOAD_STORE_FILE)
-                storePassword MYAPP_UPLOAD_STORE_PASSWORD
-                keyPassword MYAPP_UPLOAD_KEY_PASSWORD
-                keyAlias MYAPP_UPLOAD_KEY_ALIAS
-            }
+            keyAlias System.getenv("BITRISEIO_ANDROID_KEYSTORE_ALIAS")
+            keyPassword System.getenv("BITRISEIO_ANDROID_KEYSTORE_PRIVATE_KEY_PASSWORD")
+            storeFile file(System.getenv("HOME") + "/keystores/my_keystore.jks") // bitrise "file download config" step
+            storePassword System.getenv("BITRISEIO_ANDROID_KEYSTORE_PASSWORD")
         }
     }
     buildTypes {

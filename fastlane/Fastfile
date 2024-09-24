@@ -1,9 +1,9 @@
 platform :android do
-    desc "release android beta"
-    lane :beta do
+    desc "release android production"
+    lane :release do
         increment_version_code(gradle_file_path: './android/app/build.gradle')
         gradle(task: 'clean', project_dir: './android')
-        gradle(task: 'bundle', build_type: 'Release', project_dir: './android')
+        gradle(task: 'bundle', build_type: 'Release', project_dir: './android') # signing via bitrise step on bitrise variables
     end
 end
 
